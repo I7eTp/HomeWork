@@ -84,3 +84,48 @@ for (int i = 1; i <= n; i++)
     if (i % 2 == 0)
         Console.WriteLine(i);
 */
+//Напишем программу которая ввыводит числа и 
+//456 -> 46
+/* int number = new Random().Next(100, 1000);
+Console.WriteLine(number);
+Console.WriteLine($"Число без втой цифры имеет вид: {number/100}{number%10}");
+Console.WriteLine();
+int result = (number/100)*10 + (number%10);
+Console.WriteLine(result);  */
+
+/* Console.WriteLine("Ввиди трехзначное число   ");
+string Numbers + Console.ReadLine()!;
+ */
+/* if(Numbers.Length != 3)
+{
+    Console.WriteLine("Виден не правелное число");
+
+}
+else
+{
+    Console.WriteLine($"Число без вторых данных имеет вид: {Numbers[0]}{Numbers[2]}");
+} */
+
+/* **Задача 9.**
+Напишите программу, которая выводит случайное число из отрезка [10, 99] и показывает наибольшую цифру числа.
+78 -> 8
+12-> 2
+85 -> 8
+*/
+/* int number =new Random().Next(10, 100);
+Console.WriteLine(number);
+if(number/10 > number%10)
+{
+    Console.WriteLine(number/10);
+}
+else
+{
+    Console.WriteLine(number%10);
+}
+ */
+
+/* **Задача 12:** 
+Напишите программу, которая будет принимать на вход два числа и выводить, является ли второе число кратным первому. Если второе число не кратно числу первому, то программа выводит остаток от деления.
+34, 5 -> не кратно, остаток 4
+16, 4  -> кратно
+ */
