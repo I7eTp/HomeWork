@@ -44,7 +44,9 @@ else
 1 -> нет 
 */
 
-/* int den = new Random().Next(1, 8);
+//int den = new Random().Next(1, 8);
+Console.WriteLine("Ввидите число");
+int den = int.Parse(Console.ReadLine()!);
 if (den == 1){Console.WriteLine("Пон");}
 if (den == 2){Console.WriteLine("Вто");}
 if (den == 3){Console.WriteLine("Ср");}
@@ -52,4 +54,8 @@ if (den == 4){Console.WriteLine("Чет");}
 if (den == 5){Console.WriteLine("Пят");}
 if (den == 6){Console.WriteLine("Суб");}
 if (den == 7){Console.WriteLine("Вос");}
-if (den == 8){Console.WriteLine("похмелье");} */
+if (den == 8){Console.WriteLine("похмелье");} 
+else
+{
+    Console.WriteLine("Проверте  число, должно быть от 1 до 7 ");
+}
