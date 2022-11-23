@@ -129,3 +129,28 @@ else
 34, 5 -> не кратно, остаток 4
 16, 4  -> кратно
  */
+
+ //____________________________________________________________
+ /*Напишите программу, которая по задоному номеру четверти, 
+ показывает диапозон возможных кординат точек в этой четверти (х и у)*/
+
+ /* Console.WriteLine("Ввидите № четверти:  ");
+ int number = int.Parse(Console.ReadLine()!);
+
+ switch (number){case 1:{Console.WriteLine("Это первая четверть!"); break;} case 2:{Console.WriteLine("Это вторая четверть!"); break;}
+    case 3:
+    {
+        Console.WriteLine("Это третья четверть!");
+        break;
+    }
+    case 4:
+    {
+       Console.WriteLine("Это четвертая четверть!");
+        break; 
+    }
+    default:
+    {
+        Console.WriteLine("Такой четверти нет");
+        break; 
+    }
+ } */
