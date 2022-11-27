@@ -328,27 +328,24 @@ int[] GetArray(int size)
 int[] array = GetArray(12, -9, 9);
 Console.WriteLine($"[{String.Join(",", array)}]");
 
-int positive = 0;
-int negative = 0;
+int positiveSum = 0;
+int negativeSum = 0;
 
-foreach(int el in array)
-{
-    if(el > 0)
-    {
-        positive += el;
+foreach(int el in array){
+    if(el > 0){
+        positiveSum += el;
     }
-    else
-    {
-        negative += el; 
+    else{
+        negativeSum += el; 
     }
 }
-Console.WriteLine("Сумма положительных: {positive}, сумма отрицательных: {negative}");
+Console.WriteLine($"Сумма положительных: {positiveSum}, сумма отрицательных: {negativeSum}");
 
 
 //-------------------------------метод--------------------------
 int[] GetArray(int size, int minValue, int maxValue)
 {
-    int result = new int[size];
+    int[] result = new int[size];
     for(int i = 0;  i < size; i++)
     {
         result[i] = new Random().Next(minValue, maxValue + 1);

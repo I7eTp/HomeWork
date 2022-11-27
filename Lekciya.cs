@@ -13,7 +13,7 @@ Method1();
 }
 Method2("Текст сообщения"); */
 
-void Method2(string msg)
+/* void Method2(string msg)
 {
     Console.WriteLine(msg);
 }
@@ -30,3 +30,4 @@ void Method21(string msg, int count)
 }
 Method21("Текст, 4");
 
+ */
