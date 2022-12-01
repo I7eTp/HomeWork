@@ -325,22 +325,24 @@ int[] GetArray(int size)
 Найдите сумму отрицательных и положительны элементов массива
 */
 
+/* 
 int[] array = GetArray(12, -9, 9);
 Console.WriteLine($"[{String.Join(",", array)}]");
 
 int positiveSum = 0;
 int negativeSum = 0;
 
-foreach(int el in array){
-    if(el > 0){
-        positiveSum += el;
+foreach(int el in array)        //элемент (отрецательный или положительны), и массив из 12 элементов. 
+{
+    if(el > 0)                  // узнаем (el)-элемент больше или меньще нуля
+    {
+        positiveSum += el;      //если больше  + positiveSum
     }
     else{
-        negativeSum += el; 
+        negativeSum += el;      //если меньше  + negativeSum
     }
 }
 Console.WriteLine($"Сумма положительных: {positiveSum}, сумма отрицательных: {negativeSum}");
-
 
 //-------------------------------метод--------------------------
 int[] GetArray(int size, int minValue, int maxValue)
@@ -351,4 +353,51 @@ int[] GetArray(int size, int minValue, int maxValue)
         result[i] = new Random().Next(minValue, maxValue + 1);
     }
     return result; 
+} */
+//________________________________Задача 32___________________________
+/*Напишите программу замены элементов массива: "+" заменить на "-" и наоборот.
+[-4, -8, 8, -2] -> [4, 8, -8, 2]
+*/
+/* int[] array = GetArray(4, -9, 9);
+Console.WriteLine($"[ {String.Join(", ", array)} ]");
+
+for(int i=0; i< array.Length; i++){
+    array[i] *=-1;
 }
+
+Console.WriteLine($"[ {String.Join(", ", array)} ]");
+
+int[] GetArray(int size, int minValue, int maxValue){
+    int[] result = new int[size];
+    for (int i=0; i<size; i++){
+        result[i] = new Random().Next(minValue, maxValue+1);
+    }
+    return result;
+} */
+
+//__________________________________Задача 33________________________________________
+//Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+// 4; массив [6, 7, 19, 345, 3] -> нет
+// 3; массив [6, 7, 19, 345, 3] -> да
+/* int[] array = GetArray(10, -9, 9);
+Console.WriteLine($"[ {String.Join(", ", array)} ]");
+Console.Write("Введите число: ");
+int number = int.Parse(Console.ReadLine()!);
+
+bool rez=false;
+for(int i=0; i< array.Length; i++){
+    if (array[i] == number) rez=true;
+}
+if (rez==true) Console.WriteLine ("Да");
+else Console.WriteLine ("Нет");
+
+int[] GetArray(int size, int minValue, int maxValue){
+    int[] result = new int[size];
+    for (int i=0; i<size; i++){
+        result[i] = new Random().Next(minValue, maxValue+1);
+    }
+    return result;
+}
+ */
+
+ 
