@@ -174,6 +174,59 @@ int GetSum(int limit)
     }
     return sum;
 } */
+
+// ______________________________Задача 17:________________________________________________ 
+/*Определить, является ли заданное шестизначное число счастливым. 
+(Счастливым называют такое шестизначное число, 
+что сумма его первых трех цифр равна сумме его последних трех цифр).
+ */ 
+ /* int loto = new Random().Next(100000, 999999);
+Console.WriteLine(loto);
+//int loto = 333333;
+int sum1 = loto/1000;
+int sum2 = loto - sum1*1000;
+
+Console.WriteLine(sum1);
+Console.WriteLine(sum2);
+if(sum1 == sum2)
+{
+    Console.WriteLine("Бинго");
+}
+else{
+    Console.WriteLine("пробуй заново");
+}  */
+//_________________________Задача 19__________________________________________________
+
+/* Напишите программу, которая принимает на вход координаты двух точек. 
+И находит расстояние между ними в 2D пространстве.
+A (3,6); B (2,1) -> 5,09
+A (7,-5); B (1,-1) -> 7,21
+*/
+/* int[] mas = {3, 6, 2, 1};
+//int[] mas = {7, -5, 1, -1};
+
+double masR = Math.Sqrt(Math.Pow(mas[0]-mas[2], 2) + Math.Pow(mas[1]-mas[3], 2));
+Console.WriteLine($"{masR:f2}"); */
+
+
+//_________________________Задача 21__________________________________________________
+/*  Напишите программу, которая принимает на вход число (N) 
+ и выдаёт таблицу квадратов чисел от 1 до N.
+5 -> 1, 4, 9, 16, 25.
+2 -> 1, 4
+*/
+/* Console.WriteLine("Введи число:");
+int num = int.Parse(Console.ReadLine()!);
+if (num < 0)
+{
+    Console.WriteLine("Число отрицательно преобразовано в положительное");
+    num = -num;
+}
+for (int i = 1; i <= num; i++)
+    {
+        Console.Write($"{Math.Pow(i, 2)} ");
+    } */
+    
 //__________________________________**Задача 26:**________________________________________________________
 /* 
 Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
@@ -399,5 +452,175 @@ int[] GetArray(int size, int minValue, int maxValue){
     return result;
 }
  */
+
+// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+/* 
+Console.WriteLine("Введите количество строк массива: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Введите количество столбцов массива: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+// ------------------Методы-----------------------
+
+// Метод создания двумерного массива
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+
+// Метод печати двумерного масссива
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+} */
+
+
+//_____________________________________**Задача 48:**__________________
+// Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. 
+//Выведите полученный массив на экран.
+/* 
+m = 3, n = 4.
+ 0 1 2 3
+ 1 2 3 4
+ 2 3 4 5
+ */
+/*  Console.Write("Введите количество строк массива: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Введите количество столбцов массива: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 3, 4);     //(rows, columns, 0, 10)
+PrintArray(array);
+// ------------------Методы-----------------------
+
+// Метод создания двумерного массива
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+
+// Метод печати двумерного масссива
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+} 
+ */
+
+// Задача 48: Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+//  m = 3, n = 4.    
+// 0 1 2 3
+// 1 2 3 4
+// 2 3 4 5
+//////////////////////////////////////////////////////////////////////////////////////////
+// Задача 3: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Задача 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
+// Например, изначально массив выглядел вот так:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Новый массив будет выглядеть вот так:
+// 1 4 7 2
+// 5 81 2 9
+// 8 4 2 4
+
+// Задача 51: Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Сумма элементов главной диагонали: 1+9+2 = 12
+
+/* 
+Console.Write("Введите кол-во сток:");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Введите кол-во столбцов:");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArrayRandom(rows,columns,0,10);
+PrintArray(array);
+GetArrayMethod(array);
+Console.WriteLine("====================");
+PrintArray(array);
+GetDiag(array);
+
+int[,] GetArrayRandom(int sizeM, int sizeN, int minValue, int maxValue)
+{
+    int[,] array = new int[sizeM, sizeN];
+    for (int i = 0; i < sizeM; i++)
+    {
+        for (int j = 0; j < sizeN; j++)
+        {
+            // array[i, j]=i+j;
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return array;
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[") ;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"  {array[i, j]}") ;
+        }
+         Console.WriteLine("  ]") ;
+    }
+}
+
+void GetArrayMethod(int[,] array){
+ for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i%2==0 && j%2==0) array[i,j]=(int)Math.Pow(array[i,j],2) ;
+        }
+    }
+}
+
+void GetDiag(int[,] array){
+int sum =0;
+ for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i==j){
+                Console.Write($"{array[i,j]} + ");
+                sum=sum+array[i,j];
+            }
+        }
+    }
+     Console.WriteLine($"Сумма = {sum}");
+}
+ */
+
+
+
 
  

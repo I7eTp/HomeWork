@@ -305,45 +305,53 @@ int ReadInt(string message)  //Функция ввода
 } 
  */
  //____________________________Задача 37_________________________________
- /*  Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
+ /*  Найдите произведение пар чисел в одномерном массиве. 
+ Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+ Результат запишите в новом массиве.
 [1 2 3 4 5] -> 5 8 3   [6 7 3 6] -> 36 21 */
 
-Console.Write("Введите размерность массива:  ");
-int size = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите размер массива ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[size];
+FillArray(array);
+int[] array2 = new int[size];
+Console.WriteLine(" ");
+PrintArray(array);
+MultiplyPairs(array);
+Console.WriteLine(" ");
+PrintArray2(array2);
 
-int[] array = GetArray(size);
-Console.WriteLine($"Массив - [{String.Join(", ", array)}]");
-Console.WriteLine($"Массив - [{String.Join(", ", PairInArray(array))}]");
-//--------------------------------------------
-int[] PairInArray(int[] array)
+void FillArray(int[] array)
 {
-    int l =array.Length, size = l/2;
-    int[]array2;
-    if (l % 2 == 0)
-        array2 = new int[size];
-        else
-        {
-            array2 = new int[(size +1)];
-            array2[size] = array[size];            
-        }
-        for (int i = 0; i< size; i++, l--)
-             array2[i] = array[l-1];
-        return array2;     
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(0, 10);
+    }
 }
-//-----------------------------------------
-
-int[] GetArray(int seze, int minVal = 0, int maxVal = 10)
+void PrintArray(int[] array)
 {
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
-         array[i] = new Random().Next(minVal, maxVal);
-    return array;     
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i] + " "}");
+    }
 }
 
+void MultiplyPairs(int[] аrray)
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        array2[i] = array[i] * array[array.Length - i - 1];
+    }
+}
 
-
-
-
+void PrintArray2(int[] array2)
+{
+    for (int i = 0; i < array2.Length; i++)
+    {
+        Console.Write($"{array2[i] + " "} ");
+        
+    }
+}
 //_____________________________________Задача 38________________________________
 // Задайте массив целых чисел от -10 до 10. Найдите разницу между максимальным и минимальным элементами массива.
 /* 
@@ -395,3 +403,62 @@ int ReadInt(string message)  //Функция ввода
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
 } */
+
+//______________________________________Задача 41:_____________________________________________
+/*  Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел строго больше 0 ввёл пользователь.
+0, 7, 8, -2, -2 -> 2     
+1, -7, 567, 89, 223-> 4 */
+
+/* Console.Write("Введите элементы(через пробел): ");
+int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+int count = 0;
+ 
+for (int i = 0; i < arr.Length; i++)
+{
+    if (arr[i] > 0)
+    {
+        count++;
+    }
+}
+ 
+Console.WriteLine($"Кол-во элементов > 0: {count}"); */
+
+//________________________* Задача 43:_________________________
+/* Написать программу, которая на вход принимает массив из любого количества элементов 
+(не менее 6)в промежутке от 0 до 100, а на выходе выводит этот же массив, но отсортированный 
+по возрастанию(от меньшего числа к большему). */
+
+/*  int[] array = GetArrayRandom(10, 0, 100);
+Console.WriteLine($"Вывод массива в строку: [ {String.Join(", ", array)} ]");
+Console.WriteLine($"Сортировка по возрастанию: [ {String.Join(", ", SotrArray(array))} ]");
+
+int[] SotrArray(int[] array)
+{
+    int tempVar=0;
+    bool flag=true;
+    while (flag)
+    {
+        flag=false;
+        for (int j = 0; j < array.Length-1; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                tempVar = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tempVar;
+                flag = true;
+            }
+        }
+    }
+    return array;
+}
+
+int[] GetArrayRandom(int size, int minValue, int maxValue)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return array;
+}  */
